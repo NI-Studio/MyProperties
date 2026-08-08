@@ -1,688 +1,1453 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rimbun Properties — Find Your Home in Malaysia</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --deep:#173229;
-    --deep-2:#1E3D32;
-    --sand:#F1E6D3;
-    --sand-2:#E8DAC0;
-    --gold:#E0A845;
-    --maroon:#8B3A2E;
-    --ink:#1C2420;
-    --slate:#6E7A70;
-    --line:#DDD0B2;
-    --white:#FFFFFF;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--sand);
-    color:var(--ink);
-    font-family:'Plus Jakarta Sans',sans-serif;
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  a{color:inherit; text-decoration:none;}
-  ul{list-style:none;}
-  img{display:block; max-width:100%;}
-  .display{font-family:'Newsreader',serif;}
-  .wrap{max-width:1200px; margin:0 auto; padding:0 40px;}
-  @media (max-width:640px){ .wrap{padding:0 20px;} }
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
-    outline:2px solid var(--maroon); outline-offset:3px;
-  }
-  @media (prefers-reduced-motion: reduce){ *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} }
-
-  .eyebrow{
-    font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--maroon);
-  }
-
-  /* batik-inspired wave divider */
-  .wave-divider{ width:100%; height:26px; display:block; }
-  .wave-divider path{ fill:none; stroke:var(--gold); stroke-width:2; }
-
-  /* ---------- NAV ---------- */
-  header{
-    position:sticky; top:0; z-index:100;
-    background:rgba(23,50,41,0.95);
-    backdrop-filter:blur(8px);
-  }
-  nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:82px; position:relative; }
-  .logo{ color:var(--sand); font-family:'Newsreader',serif; font-size:1.4rem; font-style:italic; font-weight:500; display:flex; align-items:center; gap:10px; }
-  .logo .mark{
-    width:34px;height:34px; background:var(--gold); border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Plus Jakarta Sans',sans-serif; font-style:normal; font-weight:800; font-size:0.85rem; color:var(--deep);
-  }
-  .nav-links{ display:flex; gap:32px; align-items:center; }
-  .nav-links a{ color:#D8E2DB; font-size:0.92rem; font-weight:500; }
-  .nav-links a:hover{ color:var(--gold); }
-  .nav-cta{
-    background:var(--gold); color:var(--deep) !important; padding:11px 22px;
-    border-radius:999px; font-weight:700; font-size:0.85rem; display:flex; align-items:center; gap:6px;
-  }
-  .menu-btn{ display:none; background:none; border:none; color:var(--sand); font-size:1.5rem; cursor:pointer; line-height:0; }
-  @media (max-width:900px){
-    .nav-links{
-      display:flex; flex-direction:column; align-items:flex-start; gap:0;
-      position:absolute; top:100%; left:0; right:0;
-      background:var(--deep); border-top:1px solid rgba(255,255,255,0.12);
-      max-height:0; overflow:hidden; transition:max-height .3s ease;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rimbun Properties — Find Your Home in Malaysia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --deep: #173229;
+      --deep-2: #1E3D32;
+      --sand: #F1E6D3;
+      --sand-2: #E8DAC0;
+      --gold: #E0A845;
+      --maroon: #8B3A2E;
+      --ink: #1C2420;
+      --slate: #6E7A70;
+      --line: #DDD0B2;
+      --white: #FFFFFF;
     }
-    .nav-links.open{ max-height:320px; }
-    .nav-links li{ width:100%; }
-    .nav-links a{ display:block; padding:14px 20px; width:100%; border-bottom:1px solid rgba(255,255,255,0.08); }
-    .menu-btn{ display:block; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--sand);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .display {
+      font-family: 'Newsreader', serif;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media (max-width:640px) {
+      .wrap {
+        padding: 0 20px;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--maroon);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--maroon);
+    }
+
+    /* batik-inspired wave divider */
+    .wave-divider {
+      width: 100%;
+      height: 26px;
+      display: block;
+    }
+
+    .wave-divider path {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 2;
+    }
+
+    /* ---------- NAV ---------- */
+    header {
+      position: absolute;
+      /* Tukar dari sticky kepada absolute supaya ia terapung di atas hero */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: transparent;
+      /* Jadikan latar belakang lutsinar */
+    }
+
+    /* (Kekalkan kod nav.wrap dan logo yang lain seperti biasa) */
+    nav.wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 82px;
+      position: relative;
+    }
+
+    .logo { 
+    color: var(--sand); 
+    font-family: 'Newsreader', serif; 
+    font-size: 1.4rem; 
+    font-style: italic; 
+    font-weight: 500; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    white-space: nowrap; /* Tambah baris ini */
   }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative; display:flex; align-items:flex-end;
-    min-height:clamp(460px, calc(100vh - 82px), 660px);
+    .logo .mark {
+      width: 34px;
+      height: 34px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--deep);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #D8E2DB;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+   .nav-cta {
+    background: var(--gold); 
+    color: var(--deep) !important; 
+    width: 42px;         /* Tetapkan saiz lebar */
+    height: 42px;        /* Tetapkan saiz tinggi */
+    padding: 0;          /* Buang padding lama */
+    border-radius: 50%;  /* Jadikan bentuk bulat sempurna */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: transform .2s;
   }
-  .hero-bg{
-    position:absolute; inset:0; z-index:0;
-    background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80') center/cover;
-  }
-  .hero-bg::after{
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(23,50,41,0.55) 0%, rgba(20,32,26,0.35) 40%, rgba(15,24,19,0.92) 100%);
-  }
-  .hero-content{ position:relative; z-index:2; padding:70px 0 88px; width:100%; }
-  .hero-content .eyebrow{ color:var(--gold); }
-  h1.hero-title{
-    color:var(--sand); font-family:'Newsreader',serif; font-weight:500; font-style:italic;
-    font-size:clamp(2rem, 4.4vw, 3.4rem); line-height:1.12; max-width:16ch; margin-top:14px;
-  }
-  .hero-desc{ color:#DCE6DF; max-width:48ch; margin-top:16px; font-size:1rem; }
-  .hero-badges{ display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
-  .hero-badge{
-    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.25);
-    color:var(--sand); padding:7px 15px; border-radius:999px; font-size:0.8rem; font-weight:600;
-  }
-  @media (max-height:760px){
-    .hero{ min-height:calc(100vh - 82px); }
-    .hero-content{ padding:50px 0 70px; }
-  }
-  @media (max-width:640px){
-    .hero{ min-height:auto; }
-    .hero-content{ padding:44px 0 56px; }
-    .hero-badges{ gap:8px; }
-    .hero-badge{ font-size:0.74rem; padding:6px 12px; }
+  .nav-cta:hover {
+    transform: scale(1.05);
   }
 
-  /* ---------- SEARCH PILL ---------- */
-  .search-card{
-    position:relative; z-index:3; margin:-38px 40px 0;
-    background:var(--white); border-radius:20px;
-    display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr auto;
-    box-shadow:0 24px 50px rgba(23,50,41,0.28);
-    overflow:hidden;
-  }
-  @media (max-width:900px){ .search-card{grid-template-columns:1fr 1fr; margin:-24px 20px 0;} }
-  @media (max-width:640px){ .search-card{grid-template-columns:1fr; margin:-20px 16px 0; border-radius:16px;} }
-  .search-field{ padding:18px 22px; border-right:1px solid var(--line); }
-  @media (max-width:900px){ .search-field{border-bottom:1px solid var(--line); border-right:none;} }
-  @media (max-width:640px){ .search-field{padding:15px 18px;} }
-  @media (max-width:640px){ .search-btn{ padding:15px 22px; width:100%; } }
-  .search-field label{ display:block; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--slate); font-weight:700; margin-bottom:5px; }
-  .search-field select, .search-field input{ border:none; background:none; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.95rem; width:100%; color:var(--ink); font-weight:600; }
-  .search-btn{
-    background:var(--maroon); color:var(--sand); border:none; padding:0 30px;
-    font-weight:700; font-size:0.9rem; cursor:pointer; transition:background .2s;
-  }
-  .search-btn:hover{ background:var(--deep); }
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--sand);
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 0;
+    }
 
-  /* ---------- SECTION GENERIC ---------- */
-  section{ padding:110px 0 80px; }
-  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:30px; margin-bottom:46px; flex-wrap:wrap; }
-  .section-head h2{ font-family:'Newsreader',serif; font-weight:500; font-size:clamp(1.8rem,3.2vw,2.5rem); margin-top:10px; max-width:18ch; }
-  .section-head p{ max-width:38ch; color:var(--slate); font-size:0.95rem; }
-
-  /* ---------- FILTERS ---------- */
-  .filters{ display:flex; gap:10px; margin-bottom:34px; flex-wrap:wrap; }
-  .filter-btn{
-    border:1px solid var(--line); background:var(--white); color:var(--slate);
-    padding:9px 20px; border-radius:999px; font-size:0.85rem; font-weight:600; cursor:pointer; transition:all .2s;
+    @media (max-width:900px) {
+    nav.wrap { gap: 12px; } /* Jarakkan elemen jika terlalu rapat */
+    .nav-cta { margin-left: auto; } /* Tolak butang ikon telefon rapat ke kanan bersebelahan menu */
+    
+    .nav-links {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--deep); border-top: 1px solid rgba(255,255,255,0.12);
+      max-height: 0; overflow: hidden; transition: max-height .3s ease;
+    }
+    .nav-links.open { max-height: 320px; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 14px 20px; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .menu-btn { display: block; }
   }
-  .filter-btn:hover{ border-color:var(--maroon); color:var(--maroon); }
-  .filter-btn.active{ background:var(--deep); color:var(--sand); border-color:var(--deep); }
 
-  /* ---------- LISTING GRID ---------- */
-  .listing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
-  @media (max-width:960px){ .listing-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:640px){ .listing-grid{grid-template-columns:1fr;} }
-
-  .card{
-    background:var(--white); border-radius:18px; overflow:hidden;
-    display:flex; flex-direction:column;
-    box-shadow:0 2px 10px rgba(23,50,41,0.06);
-    transition:transform .25s ease, box-shadow .25s ease;
+  /* Tambah bahagian ini untuk menolak teks Hero ke bawah sikit dalam skrin telefon */
+  @media (max-width:640px) {
+    .logo { font-size: 1.1rem; gap: 8px; }
+    .logo .mark { width: 30px; height: 30px; }
+    .hero-content { padding-top: 110px; padding-bottom: 56px; } 
   }
-  .card:hover{ transform:translateY(-6px); box-shadow:0 20px 34px rgba(23,50,41,0.16); }
-  .card.hide{ display:none; }
-  .card-media{ position:relative; aspect-ratio:4/3; overflow:hidden; }
-  .card-media img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
-  .card:hover .card-media img{ transform:scale(1.06); }
-  .card-status{
-    position:absolute; top:12px; left:12px; z-index:2;
-    background:var(--maroon); color:var(--sand); font-size:0.68rem; font-weight:700;
-    letter-spacing:0.05em; text-transform:uppercase; padding:6px 12px; border-radius:999px;
-  }
-  .card-status.rent{ background:var(--deep); }
-  .card-status.new{ background:var(--gold); color:var(--deep); }
-  .fav-btn{
-    position:absolute; top:10px; right:10px; z-index:2;
-    width:34px; height:34px; border-radius:50%; border:none;
-    background:rgba(255,255,255,0.85); color:var(--maroon); cursor:pointer;
-    display:flex; align-items:center; justify-content:center; font-size:1rem; transition:background .2s;
-  }
-  .fav-btn.active{ background:var(--maroon); color:var(--sand); }
-  .card-body{ padding:20px 22px 22px; display:flex; flex-direction:column; flex:1; }
-  .card-price{ font-family:'Newsreader',serif; font-size:1.35rem; font-weight:600; color:var(--deep); }
-  .card-price span{ font-family:'Plus Jakarta Sans',sans-serif; font-size:0.72rem; color:var(--slate); font-weight:500; }
-  .card-title{ font-weight:700; margin-top:8px; font-size:1.02rem; }
-  .card-addr{ font-size:0.85rem; color:var(--slate); margin-top:3px; }
-  .card-tenure{ font-size:0.76rem; color:var(--maroon); font-weight:600; margin-top:6px; }
-  .spec-row{
-    display:flex; margin-top:16px; padding-top:14px; border-top:1px solid var(--line);
-    font-size:0.82rem; color:var(--ink);
-  }
-  .spec-row div{ flex:1; display:flex; flex-direction:column; gap:2px; }
-  .spec-row b{ font-size:0.95rem; }
-  .spec-row span{ color:var(--slate); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.05em; }
 
-  /* ---------- STAT STRIP ---------- */
-  .stat-strip{ background:var(--deep); color:var(--sand); padding:56px 0; }
-  .stat-strip .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; }
-  .stat-strip .item{ flex:1; min-width:150px; }
-  .stat-strip b{ font-family:'Newsreader',serif; font-size:2.3rem; font-weight:500; color:var(--gold); display:block; }
-  .stat-strip span{ font-size:0.78rem; color:#B7C6BC; text-transform:uppercase; letter-spacing:0.06em; }
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      /* Tukar min-height untuk ambil saiz penuh skrin memandangkan header kini berada di atasnya */
+      min-height: clamp(460px, 100vh, 660px);
+      padding-top: 82px;
+      /* Tolak kandungan hero ke bawah sedikit supaya tidak tertindih dengan menu navigasi */
+    }
 
-  /* ---------- AREAS ---------- */
-  .hood-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; grid-template-rows:230px 230px; gap:16px; }
-  .hood-grid a:nth-child(1){ grid-row:1/3; }
-  @media (max-width:800px){ .hood-grid{grid-template-columns:1fr 1fr; grid-template-rows:auto;} .hood-grid a:nth-child(1){grid-row:auto;} }
-  .hood-card{ position:relative; display:block; overflow:hidden; background:var(--deep); border-radius:18px; }
-  .hood-card img{ width:100%; height:100%; object-fit:cover; opacity:0.82; transition:transform .5s, opacity .3s; }
-  .hood-card:hover img{ transform:scale(1.07); opacity:0.6; }
-  .hood-card .info{ position:absolute; left:18px; bottom:16px; color:var(--sand); z-index:2; }
-  .hood-card .info h4{ font-family:'Newsreader',serif; font-size:1.3rem; font-weight:500; }
-  .hood-card .info span{ font-size:0.75rem; color:var(--gold); font-weight:600; }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80') center/cover;
+    }
 
-  /* ---------- WHY ---------- */
-  .why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-  @media (max-width:800px){ .why-grid{grid-template-columns:1fr;} }
-  .why-item{ background:var(--white); padding:32px 28px; border-radius:18px; }
-  .why-item .icon{
-    width:44px; height:44px; border-radius:12px; background:var(--sand-2);
-    display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:16px;
-  }
-  .why-item h4{ font-family:'Newsreader',serif; font-size:1.2rem; margin-bottom:8px; font-weight:600; }
-  .why-item p{ color:var(--slate); font-size:0.92rem; }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(23, 50, 41, 0.55) 0%, rgba(20, 32, 26, 0.35) 40%, rgba(15, 24, 19, 0.92) 100%);
+    }
 
-  /* ---------- TESTIMONIALS ---------- */
-  .testi-wrap{ background:var(--sand-2); padding:70px 0; }
-  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
-  @media (max-width:860px){ .testi-grid{grid-template-columns:1fr;} }
-  .testi-card{ background:var(--white); padding:28px; border-radius:18px; }
-  .testi-card .stars{ color:var(--gold); letter-spacing:2px; font-size:0.9rem; }
-  .testi-card p{ margin:14px 0 18px; font-size:0.94rem; }
-  .testi-person{ display:flex; align-items:center; gap:12px; }
-  .testi-person img{ width:42px; height:42px; border-radius:50%; object-fit:cover; }
-  .testi-person b{ font-size:0.88rem; display:block; }
-  .testi-person span{ font-size:0.75rem; color:var(--slate); }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 70px 0 88px;
+      width: 100%;
+    }
 
-  /* ---------- CTA ---------- */
-  .cta{
-    position:relative; overflow:hidden; text-align:center; padding:100px 0; color:var(--sand);
-  }
-  .cta-bg{
-    position:absolute; inset:0; z-index:0;
-    background:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1400&q=80') center/cover;
-  }
-  .cta-bg::after{ content:''; position:absolute; inset:0; background:rgba(20,38,31,0.86); }
-  .cta-inner{ position:relative; z-index:2; }
-  .cta h2{ font-family:'Newsreader',serif; font-style:italic; font-weight:500; font-size:clamp(1.9rem,4vw,2.9rem); max-width:18ch; margin:0 auto 18px; }
-  .cta p{ color:#DCE6DF; max-width:42ch; margin:0 auto 32px; }
-  .cta-btns{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-  .btn-primary{ background:var(--gold); color:var(--deep); padding:14px 28px; border-radius:999px; font-weight:700; font-size:0.9rem; }
-  .btn-ghost{ border:1px solid rgba(255,255,255,0.4); color:var(--sand); padding:14px 28px; border-radius:999px; font-weight:700; font-size:0.9rem; }
+    .hero-content .eyebrow {
+      color: var(--gold);
+    }
 
-  /* ---------- FOOTER ---------- */
-  footer{ background:var(--deep); color:#A9BAAF; padding:56px 0 26px; }
-  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:38px; }
-  @media (max-width:800px){ .footer-grid{grid-template-columns:1fr 1fr;} }
-  .footer-grid h5{ color:var(--sand); font-size:0.78rem; letter-spacing:0.07em; text-transform:uppercase; margin-bottom:14px; font-weight:700; }
-  .footer-grid li{ margin-bottom:9px; font-size:0.88rem; }
-  .footer-grid li a:hover{ color:var(--gold); }
-  .footer-logo{ font-family:'Newsreader',serif; font-style:italic; color:var(--sand); font-size:1.2rem; margin-bottom:12px; }
-  .footer-bottom{ margin-top:44px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.12); display:flex; justify-content:space-between; font-size:0.78rem; flex-wrap:wrap; gap:10px; }
+    h1.hero-title {
+      color: var(--sand);
+      font-family: 'Newsreader', serif;
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(2rem, 4.4vw, 3.4rem);
+      line-height: 1.12;
+      max-width: 16ch;
+      margin-top: 14px;
+    }
 
-  /* WhatsApp floating button */
-  .wa-float{
-    position:fixed; bottom:22px; right:22px; z-index:200;
-    background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center; font-size:1.5rem;
-    box-shadow:0 8px 22px rgba(0,0,0,0.25); transition:transform .2s;
-  }
-  .wa-float:hover{ transform:scale(1.08); }
-</style>
+    .hero-desc {
+      color: #DCE6DF;
+      max-width: 48ch;
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--sand);
+      padding: 7px 15px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    @media (max-height:760px) {
+      .hero {
+        min-height: calc(100vh - 82px);
+      }
+
+      .hero-content {
+        padding: 50px 0 70px;
+      }
+    }
+
+    @media (max-width:640px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 44px 0 56px;
+      }
+
+      .hero-badges {
+        gap: 8px;
+      }
+
+      .hero-badge {
+        font-size: 0.74rem;
+        padding: 6px 12px;
+      }
+    }
+
+    /* ---------- SEARCH PILL ---------- */
+    .search-card {
+      position: relative;
+      z-index: 3;
+      margin: -38px 40px 0;
+      background: var(--white);
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr auto;
+      box-shadow: 0 24px 50px rgba(23, 50, 41, 0.28);
+      overflow: hidden;
+    }
+
+    @media (max-width:900px) {
+      .search-card {
+        grid-template-columns: 1fr 1fr;
+        margin: -24px 20px 0;
+      }
+    }
+
+    @media (max-width:640px) {
+      .search-card {
+        grid-template-columns: 1fr;
+        margin: -20px 16px 0;
+        border-radius: 16px;
+      }
+    }
+
+    .search-field {
+      padding: 18px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    @media (max-width:900px) {
+      .search-field {
+        border-bottom: 1px solid var(--line);
+        border-right: none;
+      }
+    }
+
+    @media (max-width:640px) {
+      .search-field {
+        padding: 15px 18px;
+      }
+    }
+
+    @media (max-width:640px) {
+      .search-btn {
+        padding: 15px 22px;
+        width: 100%;
+      }
+    }
+
+    .search-field label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--slate);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .search-field select,
+    .search-field input {
+      border: none;
+      background: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      width: 100%;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .search-btn {
+      background: var(--maroon);
+      color: var(--sand);
+      border: none;
+      padding: 0 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .search-btn:hover {
+      background: var(--deep);
+    }
+
+    /* ---------- SECTION GENERIC ---------- */
+    section {
+      padding: 110px 0 80px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 46px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      font-family: 'Newsreader', serif;
+      font-weight: 500;
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      margin-top: 10px;
+      max-width: 18ch;
+    }
+
+    .section-head p {
+      max-width: 38ch;
+      color: var(--slate);
+      font-size: 0.95rem;
+    }
+
+    /* ---------- FILTERS ---------- */
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--slate);
+      padding: 9px 20px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--maroon);
+      color: var(--maroon);
+    }
+
+    .filter-btn.active {
+      background: var(--deep);
+      color: var(--sand);
+      border-color: var(--deep);
+    }
+
+    /* ---------- LISTING GRID ---------- */
+    .listing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    @media (max-width:960px) {
+      .listing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:640px) {
+      .listing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 10px rgba(23, 50, 41, 0.06);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 34px rgba(23, 50, 41, 0.16);
+    }
+
+    .card.hide {
+      display: none;
+    }
+
+    .card-media {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .card:hover .card-media img {
+      transform: scale(1.06);
+    }
+
+    .card-status {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      background: var(--maroon);
+      color: var(--sand);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .card-status.rent {
+      background: var(--deep);
+    }
+
+    .card-status.new {
+      background: var(--gold);
+      color: var(--deep);
+    }
+
+    .fav-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--maroon);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: background .2s;
+    }
+
+    .fav-btn.active {
+      background: var(--maroon);
+      color: var(--sand);
+    }
+
+    .card-body {
+      padding: 20px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-price {
+      font-family: 'Newsreader', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--deep);
+    }
+
+    .card-price span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--slate);
+      font-weight: 500;
+    }
+
+    .card-title {
+      font-weight: 700;
+      margin-top: 8px;
+      font-size: 1.02rem;
+    }
+
+    .card-addr {
+      font-size: 0.85rem;
+      color: var(--slate);
+      margin-top: 3px;
+    }
+
+    .card-tenure {
+      font-size: 0.76rem;
+      color: var(--maroon);
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .spec-row {
+      display: flex;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 0.82rem;
+      color: var(--ink);
+    }
+
+    .spec-row div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .spec-row b {
+      font-size: 0.95rem;
+    }
+
+    .spec-row span {
+      color: var(--slate);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ---------- STAT STRIP ---------- */
+    .stat-strip {
+      background: var(--deep);
+      color: var(--sand);
+      padding: 56px 0;
+    }
+
+    .stat-strip .wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .stat-strip .item {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .stat-strip b {
+      font-family: 'Newsreader', serif;
+      font-size: 2.3rem;
+      font-weight: 500;
+      color: var(--gold);
+      display: block;
+    }
+
+    .stat-strip span {
+      font-size: 0.78rem;
+      color: #B7C6BC;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ---------- AREAS ---------- */
+    .hood-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-rows: 230px 230px;
+      gap: 16px;
+    }
+
+    .hood-grid a:nth-child(1) {
+      grid-row: 1/3;
+    }
+
+    @media (max-width:800px) {
+      .hood-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .hood-grid a:nth-child(1) {
+        grid-row: auto;
+      }
+    }
+
+    .hood-card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background: var(--deep);
+      border-radius: 18px;
+    }
+
+    .hood-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.82;
+      transition: transform .5s, opacity .3s;
+    }
+
+    .hood-card:hover img {
+      transform: scale(1.07);
+      opacity: 0.6;
+    }
+
+    .hood-card .info {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      color: var(--sand);
+      z-index: 2;
+    }
+
+    .hood-card .info h4 {
+      font-family: 'Newsreader', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .hood-card .info span {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ---------- WHY ---------- */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    @media (max-width:800px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .why-item {
+      background: var(--white);
+      padding: 32px 28px;
+      border-radius: 18px;
+    }
+
+    .why-item .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--sand-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .why-item h4 {
+      font-family: 'Newsreader', serif;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .why-item p {
+      color: var(--slate);
+      font-size: 0.92rem;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testi-wrap {
+      background: var(--sand-2);
+      padding: 70px 0;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    @media (max-width:860px) {
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testi-card {
+      background: var(--white);
+      padding: 28px;
+      border-radius: 18px;
+    }
+
+    .testi-card .stars {
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+    }
+
+    .testi-card p {
+      margin: 14px 0 18px;
+      font-size: 0.94rem;
+    }
+
+    .testi-person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testi-person img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testi-person b {
+      font-size: 0.88rem;
+      display: block;
+    }
+
+    .testi-person span {
+      font-size: 0.75rem;
+      color: var(--slate);
+    }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 100px 0;
+      color: var(--sand);
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1400&q=80') center/cover;
+    }
+
+    .cta-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 38, 31, 0.86);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      max-width: 18ch;
+      margin: 0 auto 18px;
+    }
+
+    .cta p {
+      color: #DCE6DF;
+      max-width: 42ch;
+      margin: 0 auto 32px;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--deep);
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--sand);
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--deep);
+      color: #A9BAAF;
+      padding: 56px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 38px;
+    }
+
+    @media (max-width:800px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .footer-grid h5 {
+      color: var(--sand);
+      font-size: 0.78rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .footer-grid li {
+      margin-bottom: 9px;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid li a:hover {
+      color: var(--gold);
+    }
+
+    .footer-logo {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      color: var(--sand);
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-bottom {
+      margin-top: 44px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* WhatsApp floating button */
+    .wa-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 200;
+      background: #25D366;
+      color: #fff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+      transition: transform .2s;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08);
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <nav class="wrap">
-    <div class="logo"><span class="mark">R</span>Rimbun Properties</div>
-    <ul class="nav-links">
-      <li><a href="#listings">Listings</a></li>
-      <li><a href="#areas">Areas</a></li>
-      <li><a href="#why">Why Rimbun</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">📞 Book a Viewing</a>
-    <button class="menu-btn" aria-label="Menu">☰</button>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="wrap hero-content">
-    <span class="eyebrow">Rimbun Properties · Serving Klang Valley since 2011</span>
-    <h1 class="hero-title">Your next home in Malaysia, made simple.</h1>
-    <p class="hero-desc">Verified listings across Kuala Lumpur, Petaling Jaya, Subang Jaya and beyond with tenure, maintenance fees and loan guidance laid out upfront, no surprises at the SPA.</p>
-    <div class="hero-badges">
-      <span class="hero-badge">🏠 980+ listings</span>
-      <span class="hero-badge">📍 Klang Valley &amp; Penang</span>
-      <span class="hero-badge">✅ REN-certified agents</span>
-    </div>
-  </div>
-</section>
-
-<div class="search-card">
-  <div class="search-field">
-    <label>Area</label>
-    <input type="text" placeholder="e.g. Mont Kiara, PJ, Cyberjaya">
-  </div>
-  <div class="search-field">
-    <label>Property Type</label>
-    <select>
-      <option>Any type</option>
-      <option>Condominium</option>
-      <option>Terrace House</option>
-      <option>Semi-D</option>
-      <option>Bungalow</option>
-      <option>Serviced Residence</option>
-    </select>
-  </div>
-  <div class="search-field">
-    <label>Price Range</label>
-    <select>
-      <option>Any price</option>
-      <option>Under RM 500K</option>
-      <option>RM 500K – RM 1M</option>
-      <option>RM 1M – RM 2M</option>
-      <option>RM 2M+</option>
-    </select>
-  </div>
-  <div class="search-field">
-    <label>Purpose</label>
-    <select>
-      <option>Buy or Rent</option>
-      <option>For Sale</option>
-      <option>For Rent</option>
-    </select>
-  </div>
-  <button class="search-btn" onclick="document.getElementById('listings').scrollIntoView()">Search</button>
-</div>
-
-<svg class="wave-divider" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true"><path d="M0 13 Q 30 2, 60 13 T 120 13 T 180 13 T 240 13 T 300 13 T 360 13 T 420 13 T 480 13 T 540 13 T 600 13 T 660 13 T 720 13 T 780 13 T 840 13 T 900 13 T 960 13 T 1020 13 T 1080 13 T 1140 13 T 1200 13"/></svg>
-
-<section id="listings">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="eyebrow">Current Inventory</span>
-        <h2>Featured listings across the Klang Valley.</h2>
+  <header>
+    <nav class="wrap">
+      <!-- Gantikan bahagian logo dengan kod ini -->
+      <div class="logo">
+        <span class="mark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </span>
+        Rimbun Properties
       </div>
-      <p>Every card shows tenure, built-up size and maintenance fee where it applies the details buyers actually ask about.</p>
-    </div>
+      <!-- Penghujung bahagian logo -->
 
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">All Listings</button>
-      <button class="filter-btn" data-filter="sale">For Sale</button>
-      <button class="filter-btn" data-filter="rent">For Rent</button>
-      <button class="filter-btn" data-filter="new">New This Week</button>
-    </div>
-
-    <div class="listing-grid" id="listingGrid">
-
-      <article class="card" data-tag="sale new">
-        <div class="card-media">
-          <span class="card-status new">New</span>
-          <button class="fav-btn" aria-label="Save listing">♥</button>
-          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80" alt="Bright modern condominium living room with city view">
-        </div>
-        <div class="card-body">
-          <div class="card-price">RM 1,280,000</div>
-          <div class="card-title">Verve Suites, Mont Kiara</div>
-          <div class="card-addr">Jalan Kiara, Mont Kiara, Kuala Lumpur</div>
-          <div class="card-tenure">Freehold · Maintenance RM 0.38/sqft</div>
-          <div class="spec-row">
-            <div><b>3</b><span>Beds</span></div>
-            <div><b>2</b><span>Baths</span></div>
-            <div><b>1,250</b><span>Sqft</span></div>
-            <div><b>2020</b><span>Built</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" data-tag="sale">
-        <div class="card-media">
-          <span class="card-status">For Sale</span>
-          <button class="fav-btn" aria-label="Save listing">♥</button>
-          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&q=80" alt="Modern double storey terrace house exterior at dusk">
-        </div>
-        <div class="card-body">
-          <div class="card-price">RM 780,000</div>
-          <div class="card-title">Taman Bahagia Corner Terrace</div>
-          <div class="card-addr">Jalan SS2/24, Petaling Jaya, Selangor</div>
-          <div class="card-tenure">Freehold · Near SS2 LRT</div>
-          <div class="spec-row">
-            <div><b>4</b><span>Beds</span></div>
-            <div><b>3</b><span>Baths</span></div>
-            <div><b>2,200</b><span>Sqft</span></div>
-            <div><b>2005</b><span>Built</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" data-tag="sale new">
-        <div class="card-media">
-          <span class="card-status new">New</span>
-          <button class="fav-btn" aria-label="Save listing">♥</button>
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80" alt="High rise serviced residence building facade">
-        </div>
-        <div class="card-body">
-          <div class="card-price">RM 650,000</div>
-          <div class="card-title">The Sail Residences</div>
-          <div class="card-addr">Bangsar South, Kuala Lumpur</div>
-          <div class="card-tenure">Leasehold · Maintenance RM 0.35/sqft</div>
-          <div class="spec-row">
-            <div><b>2</b><span>Beds</span></div>
-            <div><b>2</b><span>Baths</span></div>
-            <div><b>900</b><span>Sqft</span></div>
-            <div><b>2018</b><span>Built</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" data-tag="sale">
-        <div class="card-media">
-          <span class="card-status">For Sale</span>
-          <button class="fav-btn" aria-label="Save listing">♥</button>
-          <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=700&q=80" alt="Bungalow with driveway and garden">
-        </div>
-        <div class="card-body">
-          <div class="card-price">RM 4,200,000</div>
-          <div class="card-title">Bukit Damansara Bungalow</div>
-          <div class="card-addr">Jalan Tempinis, Bukit Damansara, KL</div>
-          <div class="card-tenure">Freehold · Corner Lot</div>
-          <div class="spec-row">
-            <div><b>6</b><span>Beds</span></div>
-            <div><b>5</b><span>Baths</span></div>
-            <div><b>5,400</b><span>Sqft</span></div>
-            <div><b>2015</b><span>Built</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" data-tag="rent">
-        <div class="card-media">
-          <span class="card-status rent">For Rent</span>
-          <button class="fav-btn" aria-label="Save listing">♥</button>
-          <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=80" alt="Apartment block street view with landscaping">
-        </div>
-        <div class="card-body">
-          <div class="card-price">RM 1,800<span>/mo</span></div>
-          <div class="card-title">Cyberia Smarthomes</div>
-          <div class="card-addr">Persiaran Bestari, Cyberjaya, Selangor</div>
-          <div class="card-tenure">Fully Furnished · Near MSC Zone</div>
-          <div class="spec-row">
-            <div><b>2</b><span>Beds</span></div>
-            <div><b>1</b><span>Baths</span></div>
-            <div><b>850</b><span>Sqft</span></div>
-            <div><b>2017</b><span>Built</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" data-tag="sale">
-        <div class="card-media">
-          <span class="card-status">For Sale</span>
-          <button class="fav-btn" aria-label="Save listing">♥</button>
-          <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=700&q=80" alt="Semi-detached suburban house with two car porch">
-        </div>
-        <div class="card-body">
-          <div class="card-price">RM 1,650,000</div>
-          <div class="card-title">USJ Heights Semi-D</div>
-          <div class="card-addr">Jalan USJ 11, Subang Jaya, Selangor</div>
-          <div class="card-tenure">Freehold · Gated &amp; Guarded</div>
-          <div class="spec-row">
-            <div><b>5</b><span>Beds</span></div>
-            <div><b>4</b><span>Baths</span></div>
-            <div><b>3,100</b><span>Sqft</span></div>
-            <div><b>2012</b><span>Built</span></div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<div class="stat-strip">
-  <div class="wrap">
-    <div class="item"><b>980+</b><span>Listings live now</span></div>
-    <div class="item"><b>RM 612M</b><span>Sales closed in 2025</span></div>
-    <div class="item"><b>24 days</b><span>Median time to close</span></div>
-    <div class="item"><b>4.8/5</b><span>Client rating</span></div>
-  </div>
-</div>
-
-<section id="areas">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="eyebrow">Where To Look</span>
-        <h2>Areas worth knowing.</h2>
-      </div>
-      <p>Each area page covers LRT/MRT access, school zoning, and 5-year price trends.</p>
-    </div>
-    <div class="hood-grid">
-      <a href="#" class="hood-card">
-        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80" alt="Mont Kiara residential neighborhood">
-        <div class="info"><span>62 active listings</span><h4>Mont Kiara</h4></div>
+      <ul class="nav-links">
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#areas">Areas</a></li>
+        <li><a href="#why">Why Rimbun</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta" aria-label="Contact Us">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg>
       </a>
-      <a href="#" class="hood-card">
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=700&q=80" alt="Bangsar South apartment blocks">
-        <div class="info"><span>45 active listings</span><h4>Bangsar South</h4></div>
-      </a>
-      <a href="#" class="hood-card">
-        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=700&q=80" alt="Petaling Jaya neighborhood street">
-        <div class="info"><span>78 active listings</span><h4>Petaling Jaya</h4></div>
-      </a>
-      <a href="#" class="hood-card">
-        <img src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=700&q=80" alt="Cyberjaya modern buildings">
-        <div class="info"><span>31 active listings</span><h4>Cyberjaya</h4></div>
-      </a>
-      <a href="#" class="hood-card">
-        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=700&q=80" alt="Subang Jaya suburban homes">
-        <div class="info"><span>39 active listings</span><h4>Subang Jaya</h4></div>
-      </a>
+      <button class="menu-btn" aria-label="Menu">☰</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="wrap hero-content">
+      <span class="eyebrow">Rimbun Properties · Serving Klang Valley since 2011</span>
+      <h1 class="hero-title">Your next home in Malaysia, made simple.</h1>
+      <p class="hero-desc">Verified listings across Kuala Lumpur, Petaling Jaya, Subang Jaya and beyond with tenure,
+        maintenance fees and loan guidance laid out upfront, no surprises at the SPA.</p>
+      <div class="hero-badges">
+        <span class="hero-badge">🏠 980+ listings</span>
+        <span class="hero-badge">📍 Klang Valley &amp; Penang</span>
+        <span class="hero-badge">✅ REN-certified agents</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="search-card">
+    <div class="search-field">
+      <label>Area</label>
+      <input type="text" placeholder="e.g. Mont Kiara, PJ, Cyberjaya">
+    </div>
+    <div class="search-field">
+      <label>Property Type</label>
+      <select>
+        <option>Any type</option>
+        <option>Condominium</option>
+        <option>Terrace House</option>
+        <option>Semi-D</option>
+        <option>Bungalow</option>
+        <option>Serviced Residence</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Price Range</label>
+      <select>
+        <option>Any price</option>
+        <option>Under RM 500K</option>
+        <option>RM 500K – RM 1M</option>
+        <option>RM 1M – RM 2M</option>
+        <option>RM 2M+</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Purpose</label>
+      <select>
+        <option>Buy or Rent</option>
+        <option>For Sale</option>
+        <option>For Rent</option>
+      </select>
+    </div>
+    <button class="search-btn" onclick="document.getElementById('listings').scrollIntoView()">Search</button>
+  </div>
+
+  <svg class="wave-divider" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true">
+    <path
+      d="M0 13 Q 30 2, 60 13 T 120 13 T 180 13 T 240 13 T 300 13 T 360 13 T 420 13 T 480 13 T 540 13 T 600 13 T 660 13 T 720 13 T 780 13 T 840 13 T 900 13 T 960 13 T 1020 13 T 1080 13 T 1140 13 T 1200 13" />
+  </svg>
+
+  <section id="listings">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Current Inventory</span>
+          <h2>Featured listings across the Klang Valley.</h2>
+        </div>
+        <p>Every card shows tenure, built-up size and maintenance fee where it applies the details buyers actually ask
+          about.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All Listings</button>
+        <button class="filter-btn" data-filter="sale">For Sale</button>
+        <button class="filter-btn" data-filter="rent">For Rent</button>
+        <button class="filter-btn" data-filter="new">New This Week</button>
+      </div>
+
+      <div class="listing-grid" id="listingGrid">
+
+        <article class="card" data-tag="sale new">
+          <div class="card-media">
+            <span class="card-status new">New</span>
+            <button class="fav-btn" aria-label="Save listing">♥</button>
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80"
+              alt="Bright modern condominium living room with city view">
+          </div>
+          <div class="card-body">
+            <div class="card-price">RM 1,280,000</div>
+            <div class="card-title">Verve Suites, Mont Kiara</div>
+            <div class="card-addr">Jalan Kiara, Mont Kiara, Kuala Lumpur</div>
+            <div class="card-tenure">Freehold · Maintenance RM 0.38/sqft</div>
+            <div class="spec-row">
+              <div><b>3</b><span>Beds</span></div>
+              <div><b>2</b><span>Baths</span></div>
+              <div><b>1,250</b><span>Sqft</span></div>
+              <div><b>2020</b><span>Built</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tag="sale">
+          <div class="card-media">
+            <span class="card-status">For Sale</span>
+            <button class="fav-btn" aria-label="Save listing">♥</button>
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&q=80"
+              alt="Modern double storey terrace house exterior at dusk">
+          </div>
+          <div class="card-body">
+            <div class="card-price">RM 780,000</div>
+            <div class="card-title">Taman Bahagia Corner Terrace</div>
+            <div class="card-addr">Jalan SS2/24, Petaling Jaya, Selangor</div>
+            <div class="card-tenure">Freehold · Near SS2 LRT</div>
+            <div class="spec-row">
+              <div><b>4</b><span>Beds</span></div>
+              <div><b>3</b><span>Baths</span></div>
+              <div><b>2,200</b><span>Sqft</span></div>
+              <div><b>2005</b><span>Built</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tag="sale new">
+          <div class="card-media">
+            <span class="card-status new">New</span>
+            <button class="fav-btn" aria-label="Save listing">♥</button>
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80"
+              alt="High rise serviced residence building facade">
+          </div>
+          <div class="card-body">
+            <div class="card-price">RM 650,000</div>
+            <div class="card-title">The Sail Residences</div>
+            <div class="card-addr">Bangsar South, Kuala Lumpur</div>
+            <div class="card-tenure">Leasehold · Maintenance RM 0.35/sqft</div>
+            <div class="spec-row">
+              <div><b>2</b><span>Beds</span></div>
+              <div><b>2</b><span>Baths</span></div>
+              <div><b>900</b><span>Sqft</span></div>
+              <div><b>2018</b><span>Built</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tag="sale">
+          <div class="card-media">
+            <span class="card-status">For Sale</span>
+            <button class="fav-btn" aria-label="Save listing">♥</button>
+            <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=700&q=80"
+              alt="Bungalow with driveway and garden">
+          </div>
+          <div class="card-body">
+            <div class="card-price">RM 4,200,000</div>
+            <div class="card-title">Bukit Damansara Bungalow</div>
+            <div class="card-addr">Jalan Tempinis, Bukit Damansara, KL</div>
+            <div class="card-tenure">Freehold · Corner Lot</div>
+            <div class="spec-row">
+              <div><b>6</b><span>Beds</span></div>
+              <div><b>5</b><span>Baths</span></div>
+              <div><b>5,400</b><span>Sqft</span></div>
+              <div><b>2015</b><span>Built</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tag="rent">
+          <div class="card-media">
+            <span class="card-status rent">For Rent</span>
+            <button class="fav-btn" aria-label="Save listing">♥</button>
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=80"
+              alt="Apartment block street view with landscaping">
+          </div>
+          <div class="card-body">
+            <div class="card-price">RM 1,800<span>/mo</span></div>
+            <div class="card-title">Cyberia Smarthomes</div>
+            <div class="card-addr">Persiaran Bestari, Cyberjaya, Selangor</div>
+            <div class="card-tenure">Fully Furnished · Near MSC Zone</div>
+            <div class="spec-row">
+              <div><b>2</b><span>Beds</span></div>
+              <div><b>1</b><span>Baths</span></div>
+              <div><b>850</b><span>Sqft</span></div>
+              <div><b>2017</b><span>Built</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tag="sale">
+          <div class="card-media">
+            <span class="card-status">For Sale</span>
+            <button class="fav-btn" aria-label="Save listing">♥</button>
+            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=700&q=80"
+              alt="Semi-detached suburban house with two car porch">
+          </div>
+          <div class="card-body">
+            <div class="card-price">RM 1,650,000</div>
+            <div class="card-title">USJ Heights Semi-D</div>
+            <div class="card-addr">Jalan USJ 11, Subang Jaya, Selangor</div>
+            <div class="card-tenure">Freehold · Gated &amp; Guarded</div>
+            <div class="spec-row">
+              <div><b>5</b><span>Beds</span></div>
+              <div><b>4</b><span>Baths</span></div>
+              <div><b>3,100</b><span>Sqft</span></div>
+              <div><b>2012</b><span>Built</span></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-strip">
+    <div class="wrap">
+      <div class="item"><b>980+</b><span>Listings live now</span></div>
+      <div class="item"><b>RM 612M</b><span>Sales closed in 2025</span></div>
+      <div class="item"><b>24 days</b><span>Median time to close</span></div>
+      <div class="item"><b>4.8/5</b><span>Client rating</span></div>
     </div>
   </div>
-</section>
 
-<section id="why">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="eyebrow">How It Works</span>
-        <h2>Why Malaysians choose Rimbun.</h2>
+  <section id="areas">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Where To Look</span>
+          <h2>Areas worth knowing.</h2>
+        </div>
+        <p>Each area page covers LRT/MRT access, school zoning, and 5-year price trends.</p>
       </div>
-      <p>From loan pre-approval to SPA signing, we walk with you at every step.</p>
+      <div class="hood-grid">
+        <a href="#" class="hood-card">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80"
+            alt="Mont Kiara residential neighborhood">
+          <div class="info"><span>62 active listings</span>
+            <h4>Mont Kiara</h4>
+          </div>
+        </a>
+        <a href="#" class="hood-card">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=700&q=80"
+            alt="Bangsar South apartment blocks">
+          <div class="info"><span>45 active listings</span>
+            <h4>Bangsar South</h4>
+          </div>
+        </a>
+        <a href="#" class="hood-card">
+          <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=700&q=80"
+            alt="Petaling Jaya neighborhood street">
+          <div class="info"><span>78 active listings</span>
+            <h4>Petaling Jaya</h4>
+          </div>
+        </a>
+        <a href="#" class="hood-card">
+          <img src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=700&q=80"
+            alt="Cyberjaya modern buildings">
+          <div class="info"><span>31 active listings</span>
+            <h4>Cyberjaya</h4>
+          </div>
+        </a>
+        <a href="#" class="hood-card">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=700&q=80"
+            alt="Subang Jaya suburban homes">
+          <div class="info"><span>39 active listings</span>
+            <h4>Subang Jaya</h4>
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="icon">📋</div>
-        <h4>Full disclosure listings</h4>
-        <p>Tenure, maintenance fees, sinking fund, and outstanding bookings are verified before a listing goes live.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon">🏦</div>
-        <h4>Loan &amp; DSR guidance</h4>
-        <p>We help you understand your margin of financing and connect you with bank panels for the best rates.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon">🤝</div>
-        <h4>REN-certified agents</h4>
-        <p>Every agent is registered with the Board of Valuers, Appraisers, Estate Agents and Property Managers (BOVAEP).</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="testi-wrap" id="reviews">
-  <div class="wrap">
-    <div class="section-head" style="margin-bottom:32px;">
-      <div>
-        <span class="eyebrow">Client Notes</span>
-        <h2>What our clients say.</h2>
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">How It Works</span>
+          <h2>Why Malaysians choose Rimbun.</h2>
+        </div>
+        <p>From loan pre-approval to SPA signing, we walk with you at every step.</p>
       </div>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p>"Agent explained the maintenance fee and sinking fund upfront — no surprises when we collected the keys."</p>
-        <div class="testi-person">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Portrait of client Aisyah Rahman">
-          <div><b>Aisyah Rahman</b><span>Bought in Mont Kiara</span></div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="icon">📋</div>
+          <h4>Full disclosure listings</h4>
+          <p>Tenure, maintenance fees, sinking fund, and outstanding bookings are verified before a listing goes live.
+          </p>
+        </div>
+        <div class="why-item">
+          <div class="icon">🏦</div>
+          <h4>Loan &amp; DSR guidance</h4>
+          <p>We help you understand your margin of financing and connect you with bank panels for the best rates.</p>
+        </div>
+        <div class="why-item">
+          <div class="icon">🤝</div>
+          <h4>REN-certified agents</h4>
+          <p>Every agent is registered with the Board of Valuers, Appraisers, Estate Agents and Property Managers
+            (BOVAEP).</p>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p>"They helped us compare bank rates and got our loan approved within two weeks. Smooth from start to finish."</p>
-        <div class="testi-person">
-          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=100&q=80" alt="Portrait of client Kevin Tan">
-          <div><b>Kevin Tan</b><span>Bought in Subang Jaya</span></div>
+    </div>
+  </section>
+
+  <div class="testi-wrap" id="reviews">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:32px;">
+        <div>
+          <span class="eyebrow">Client Notes</span>
+          <h2>What our clients say.</h2>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p>"Renting in Cyberjaya felt effortless — the unit specs matched exactly what was listed, no hidden catch."</p>
-        <div class="testi-person">
-          <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80" alt="Portrait of client Priya Nair">
-          <div><b>Priya Nair</b><span>Rented in Cyberjaya</span></div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Agent explained the maintenance fee and sinking fund upfront — no surprises when we collected the keys."
+          </p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80"
+              alt="Portrait of client Aisyah Rahman">
+            <div><b>Aisyah Rahman</b><span>Bought in Mont Kiara</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"They helped us compare bank rates and got our loan approved within two weeks. Smooth from start to
+            finish."</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=100&q=80"
+              alt="Portrait of client Kevin Tan">
+            <div><b>Kevin Tan</b><span>Bought in Subang Jaya</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Renting in Cyberjaya felt effortless — the unit specs matched exactly what was listed, no hidden catch."
+          </p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80"
+              alt="Portrait of client Priya Nair">
+            <div><b>Priya Nair</b><span>Rented in Cyberjaya</span></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<section class="cta" id="contact">
-  <div class="cta-bg"></div>
-  <div class="wrap cta-inner">
-    <h2>Ready to see the full listing sheet?</h2>
-    <p>Book a free 15-minute call with a local REN-certified agent no obligation, just straight answers.</p>
-    <div class="cta-btns">
-      <a href="#" class="btn-primary">Book a Viewing</a>
-      <a href="#listings" class="btn-ghost">Browse Listings</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Rimbun Properties</div>
-        <p style="font-size:0.88rem; max-width:32ch;">Verified listings and local expertise across the Klang Valley since 2011.</p>
-      </div>
-      <div>
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="#listings">All Listings</a></li>
-          <li><a href="#areas">Areas</a></li>
-          <li><a href="#why">Why Rimbun</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Company</h5>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Media</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="mailto:hello@rimbunproperties.example">hello@rimbunproperties.example</a></li>
-          <li><a href="tel:+60312345678">+60 3-1234 5678</a></li>
-          <li>Level 12, Menara Rimbun, Jalan Sultan Ismail, 50250 Kuala Lumpur</li>
-        </ul>
+  <section class="cta" id="contact">
+    <div class="cta-bg"></div>
+    <div class="wrap cta-inner">
+      <h2>Ready to see the full listing sheet?</h2>
+      <p>Book a free 15-minute call with a local REN-certified agent no obligation, just straight answers.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-primary">Book a Viewing</a>
+        <a href="#listings" class="btn-ghost">Browse Listings</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Rimbun Properties Sdn Bhd. All rights reserved.</span>
-      <span>Privacy Policy · Terms of Service</span>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Rimbun Properties</div>
+          <p style="font-size:0.88rem; max-width:32ch;">Verified listings and local expertise across the Klang Valley
+            since 2011.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="#listings">All Listings</a></li>
+            <li><a href="#areas">Areas</a></li>
+            <li><a href="#why">Why Rimbun</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Media</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:hello@rimbunproperties.example">hello@rimbunproperties.example</a></li>
+            <li><a href="tel:+60312345678">+60 3-1234 5678</a></li>
+            <li>Level 12, Menara Rimbun, Jalan Sultan Ismail, 50250 Kuala Lumpur</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Rimbun Properties Sdn Bhd. All rights reserved.</span>
+        <span>Privacy Policy · Terms of Service</span>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<a href="#" class="wa-float" aria-label="Chat on WhatsApp">💬</a>
+  <a href="#" class="wa-float" aria-label="Chat on WhatsApp">💬</a>
 
-<script>
-  const menuBtn = document.querySelector('.menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-  menuBtn.addEventListener('click', ()=>{
-    navLinks.classList.toggle('open');
-    menuBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
-  });
-  navLinks.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click', ()=>{
-      navLinks.classList.remove('open');
-      menuBtn.textContent = '☰';
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
     });
-  });
-
-  const buttons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('#listingGrid .card');
-  buttons.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      buttons.forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      cards.forEach(card=>{
-        const tags = card.dataset.tag.split(' ');
-        if(f==='all' || tags.includes(f)){ card.classList.remove('hide'); }
-        else { card.classList.add('hide'); }
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.textContent = '☰';
       });
     });
-  });
 
-  document.querySelectorAll('.fav-btn').forEach(btn=>{
-    btn.addEventListener('click', (e)=>{ e.preventDefault(); btn.classList.toggle('active'); });
-  });
-</script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#listingGrid .card');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(card => {
+          const tags = card.dataset.tag.split(' ');
+          if (f === 'all' || tags.includes(f)) { card.classList.remove('hide'); }
+          else { card.classList.add('hide'); }
+        });
+      });
+    });
+
+    document.querySelectorAll('.fav-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => { e.preventDefault(); btn.classList.toggle('active'); });
+    });
+  </script>
 
 </body>
+
 </html>
